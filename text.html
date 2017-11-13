@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本画布</title>
+  <style>
+    body{text-align:center;}
+    canvas{background:green}
+  </style>
+</head>
+<body>
+<canvas id="c2" width="500" height="400">您的浏览器版本太低不能显示正确的图形，请升级</canvas>
+<script>
+  var ctx=c2.getContext("2d");
+  ctx.textBaseline="top";
+  ctx.strokeStyle="lightyellow";
+  ctx.font="30px SimHei";
+  var str="Tarena";
+  //左上
+  ctx.strokeText(str,0,0);
+  //获取文字宽度返回对象，对象属性width
+  var txtWidth=ctx.measureText(str).width;
+  //右上
+  ctx.strokeText(str,500-txtWidth,0);
+  //左下
+  ctx.strokeText(str,0,370);
+  //右下
+  ctx.strokeText(str,500-txtWidth,370);
+
+</script>
+</body>
+</html>
